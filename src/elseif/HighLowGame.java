@@ -17,7 +17,9 @@ public class HighLowGame {
 		
 	System.out.println(random);
 		// 11. do the following 10 times
-		
+		for (int i = 0; i < 10; i++) {
+			
+		}
 			// 1. ask the user for a guess using a pop-up window, and save their response 
 	String Number = JOptionPane.showInputDialog("Guess a number (1-100)");
 			// 4. convert the users’ answer to an int (Integer.parseInt(string))
@@ -29,14 +31,18 @@ public class HighLowGame {
 			// 6. win
 			// 7. if the guess is high
 				if(answer > random) {
-					JOptionPane.showMessageDialog(null, "You're too high~!");
+					JOptionPane.showMessageDialog(null, "You're too high, you lose!");
 				}
 				// 8. tell them it's too high
 			
 				// 9. if the guess is low
+				if(answer < random) {
+					JOptionPane.showMessageDialog(null, "You're too low, you lose!");
+				}
 				// 10. tell them it's too low
 
 		// 12. tell them they lose
+	
 	}
 
 	private static void println(int random) {
