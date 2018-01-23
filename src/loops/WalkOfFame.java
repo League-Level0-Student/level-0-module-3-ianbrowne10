@@ -27,7 +27,7 @@ mini.turn(144);
 mini.setAngle(-90);
 mini.penUp();
 
-mini.move(80ss);
+mini.move(80);
 }
 
 
