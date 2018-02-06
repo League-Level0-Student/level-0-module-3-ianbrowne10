@@ -5,9 +5,37 @@ import javax.swing.JOptionPane;
 import org.jointheleague.graphical.robot.Robot;
 
 public class ObediantRobot {
+	static Robot i = new Robot();
+	
+	
 public static void main(String[] args) {
 	String answer = JOptionPane.showInputDialog("What shape do you want? (Circle, Square, Triangle)");
-if(answer.equalsIgnoreCase("square")) {
+  String color = JOptionPane.showInputDialog("What color do you want?");
+	if(color.equalsIgnoreCase("red")) {
+		i.setPenColor(255,0,0);
+	}
+	if(color.equalsIgnoreCase("green")) {
+		i.setPenColor(0,255,0);
+	}
+	if(color.equalsIgnoreCase("blue")) {
+		i.setPenColor(0,0,255);
+	}
+	if(color.equalsIgnoreCase("yellow")) {
+		i.setPenColor(255,255,0);
+	}
+	if(color.equalsIgnoreCase("purple")) {
+		i.setPenColor(200,0,255);
+	}
+	if(color.equalsIgnoreCase("pink")) {
+		i.setPenColor(255,0,255);
+	}
+	if(color.equalsIgnoreCase("orange")) {
+		i.setPenColor(255,128,0);
+	}
+	else {
+		i.setRandomPenColor();
+	}
+  if(answer.equalsIgnoreCase("square")) {
 	drawSquare();
 }
 if(answer.equalsIgnoreCase("triangle")) {
@@ -15,19 +43,26 @@ if(answer.equalsIgnoreCase("triangle")) {
 }
 if(answer.equalsIgnoreCase("circle")) {
 	drawCircle();
-}
+
 
 }
+}
+
+
 String answer = JOptionPane.showInputDialog("What shape do you want? (Circle, Square, Triangle)");
 
 
 
 private static void drawSquare() {
-	Robot i = new Robot();
-i.penDown();
+	String color = JOptionPane.showInputDialog("What color do you want?");
 	
 i.penDown();
-	i.setSpeed(1000);
+	if(color.equalsIgnoreCase("red")) {
+	i.setPenColor(255,0,0);
+}
+	
+
+i.setSpeed(1000);
 	i.hide();
 	for (int j = 0; j < 4; j++) {
 	
@@ -35,26 +70,26 @@ i.penDown();
 	i.turn(90);
 }}
 private static void drawTriangle() {
-	 Robot andrew = new Robot();
-andrew.penDown();
-andrew.setSpeed(1000);
-andrew.hide();
+	
+i.penDown();
+i.setSpeed(1000);
+i.hide();
 
 for (int y =0; y<3; y++) {
-	andrew.turn(120);
+	i.turn(120);
 	
-andrew.move(100);
+i.move(100);
 }
 }
 private static void drawCircle() {
-	Robot bill = new Robot();
-			bill.setSpeed(1000);
-bill.hide();
-bill.penDown();
-for (int e = 0; e<360; e++) {
-	bill.setAngle(e);
 	
-bill.move(1);
+			i.setSpeed(1000);
+i.hide();
+i.penDown();
+for (int e = 0; e<360; e++) {
+	i.setAngle(e);
+	
+i.move(1);
 }
 }
 
